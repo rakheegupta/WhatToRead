@@ -5,85 +5,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:tooltipText="Let's Read"
+
     >
 
     <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
         android:id="@+id/et_search_text"
-        android:tooltipText="what do you want to read about today?"
-        tools:text="what do you want to readddd sdsdsdsd sdsdsd sdsff sfdsffffsf
-        fdfffdfdffdfgdgfgfg?"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_search"
+        app:layout_constraintHorizontal_weight="2.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.6"
-       />
+        tools:text="music? Rowling?"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/btn_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/search_button_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/et_search_text"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.3"
-        />
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:id="@+id/et_search_text_btm"
-        android:tooltipText="read  today?"
-        tools:text="read today?"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf = "@id/btn_search_btm"
-        app:layout_constraintHorizontal_weight="2"
-        />
-
-    <Button
-        android:id="@+id/btn_search_btm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/search_button_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/et_search_text_btm"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="16dp"
+        android:text="@string/search_button_name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-    />
+        app:layout_constraintStart_toEndOf="@id/et_search_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBeginDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/begin_date"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search_text" />
 
     <EditText
-        android:layout_width="0dp"
+        android:id="@+id/etBeginDate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/et_search_text_center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_search_center"
-        app:layout_constraintHorizontal_weight="2.5"
-        android:autofillHints="lets read today..." />
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_search_center"
-        android:text="@string/search_button_name"
-        android:layout_marginStart="6dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="15dp"
+        android:inputType="date"
+        android:text="10/20/2021"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/et_search_text_center"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBeginDate" />
+
+    <TextView
+        android:id="@+id/tvSortOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/sort_order"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBeginDate" />
+
+    <Spinner
+        android:id="@+id/spSortOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSortOrder"
+
+        />
+
+    <TextView
+        android:id="@+id/tvNewsDeskLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/news_desk_label"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spSortOrder" />
+
+
+    <CheckBox
+        android:id="@+id/cbNewsDeskValue1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/news_desk_value1"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toTopOf="@id/cbNewsDeskValue2"
+        app:layout_constraintTop_toBottomOf="@id/tvNewsDeskLabel"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/cbNewsDeskValue2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/news_desk_value2"
+        app:layout_constraintBottom_toTopOf="@id/cbNewsDeskValue3"
+        app:layout_constraintTop_toBottomOf="@id/cbNewsDeskValue1"
+        app:layout_constraintEnd_toEndOf="@id/cbNewsDeskValue1"
+        app:layout_constraintStart_toStartOf="@id/cbNewsDeskValue1"
+        />
+
+
+    <CheckBox
+        android:id="@+id/cbNewsDeskValue3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/news_desk_value3"
+        app:layout_constraintEnd_toEndOf="@id/cbNewsDeskValue1"
+        app:layout_constraintStart_toStartOf="@id/cbNewsDeskValue1"
+        app:layout_constraintTop_toBottomOf="@id/cbNewsDeskValue2"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
