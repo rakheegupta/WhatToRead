@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -44,11 +45,12 @@ class MainActivity : AppCompatActivity() {
         if (cbNewsDeskVal1.isChecked)
             newsDeskValues.plus("Arts")
         if (cbNewsDeskVal2.isChecked)
-            newsDeskValues.plus("Fashion")
+            newsDeskValues.plus("Fashion & Style")
         if (cbNewsDeskVal3.isChecked)
             newsDeskValues.plus("Sports")
 
-        parameters= APIParameters(etBeginDate.text as Date,spSortOrder.selectedItem.toString(),newsDeskValues)
+       // val selectedDate = SimpleDateFormat("yyyymmdd").format(etBeginDate.text)
+        parameters= APIParameters("20211010",spSortOrder.selectedItem.toString(),newsDeskValues)
     }
 
     fun setupSortOrder()

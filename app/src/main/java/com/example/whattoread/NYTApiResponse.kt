@@ -1,3 +1,5 @@
 package com.example.whattoread
 
-class NYTApiResponse (val results:List<Article>)
+class NYTApiResponse (val status:String,
+                      val copyright:String,
+                      val response : NYTResponseDoc)

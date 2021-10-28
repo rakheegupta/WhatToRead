@@ -6,7 +6,7 @@ import java.util.*
 
 @Parcelize
 class APIParameters(
-    val date:Date,
+    val date:String,
     val sortOrder:String,
     val newsDeskValues:Array<String>
 ):Parcelable

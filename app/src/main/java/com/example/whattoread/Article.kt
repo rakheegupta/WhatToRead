@@ -3,7 +3,7 @@ package com.example.whattoread
 class Article (
     val abstract:String,
     val web_url:String,
-    val mediaArray:Array<ArticleMultimedia>,
+    val multimedia:Array<ArticleMultimedia>,
     val headline: HeadLine,
     val byline:Author
 )
