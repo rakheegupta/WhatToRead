@@ -1,18 +1,25 @@
 package com.example.whattoread
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 class Article (
     val abstract:String,
     val web_url:String,
     val multimedia:Array<ArticleMultimedia>,
     val headline: HeadLine,
     val byline:Author
-)
+) : Parcelable
 
+@Parcelize
 class ArticleMultimedia(
     val caption:String,
     val url:String
-)
+):Parcelable
 
-class HeadLine(val main:String)
+@Parcelize
+class HeadLine(val main:String):Parcelable
 
-class Author(val original:String)
+@Parcelize
+class Author(val original:String):Parcelable

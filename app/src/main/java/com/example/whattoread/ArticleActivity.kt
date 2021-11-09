@@ -1,7 +1,9 @@
 package com.example.whattoread
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +22,14 @@ class ArticleActivity : AppCompatActivity() {
         rvArticle.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         rvArticle.adapter = articleAdapter
 
+        articleAdapter.setCustomObjectListener(object: ArticleAdapter.MyCustomObjectListener {
+            override fun displayArticle(article: Article?) {
+                val intent = Intent(this@ArticleActivity,WebViewArticle::class.java)
+                intent.putExtra("article",article)
+                startActivity(intent)
+            }
+
+        })
         val params:APIParameters? = intent.getParcelableExtra("settings")
         val articleViewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
 
