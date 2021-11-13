@@ -27,16 +27,12 @@ interface ArticleService{
     fun getArticlesFromNYT():Call<NYTApiResponse>
 
     @GET("articlesearch.json")
-    fun getArticlesFromNYT(@Query("sort") sortOrder:String,
+    fun getArticlesFromNYT(@Query("q") query:String?,
+                           @Query("sort") sortOrder:String,
                            @Query("begin_date") beginDate:String,
-                           @Query("fq") funcQueryParams:String)
+                           @Query("fq") funcQueryParams:String?)
     : Call<NYTApiResponse>
 
-
-    @GET("articlesearch.json")
-    fun getArticlesFromNYT(@Query("sort") sortOrder:String,
-                           @Query("begin_date") beginDate:String)
-            : Call<NYTApiResponse>
 
     companion object {
         operator fun invoke():ArticleService{

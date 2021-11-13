@@ -35,9 +35,11 @@ class ArticleActivity : AppCompatActivity() {
         ItemClickSupport.addTo(rvArticle).setOnItemClickListener(itemClickListenerOnClick)
 */
             val params:APIParameters? = intent.getParcelableExtra("settings")
+            val queryString:String? = intent.getStringExtra("query")
+
             val articleViewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
 
-            articleViewModel.fetchArticles(params!!.sortOrder,params.date, params.newsDeskValues)
+            articleViewModel.fetchArticles(queryString,params!!.sortOrder,params.date, params.newsDeskValues)
 
             articleViewModel.getArticleRepository().getArticles().observe(this,{ articleSnapshot ->
                 articleList.clear()

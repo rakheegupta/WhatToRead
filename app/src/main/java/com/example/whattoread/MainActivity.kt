@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity() {
     fun displayResultsFromApi(){
         val intent= Intent(this,ArticleActivity::class.java)
         intent.putExtra("settings",parameters)
+        intent.putExtra("query",parameters.searchQuery)
         startActivity(intent)
     }
 
     fun getSettingsParams(){
+        val etSearchText = findViewById<EditText>(R.id.et_search_text)
         val etBeginDate = findViewById<EditText>(R.id.etBeginDate)
         val spSortOrder = findViewById<Spinner>(R.id.spSortOrder)
         val cbNewsDeskVal1 = findViewById<CheckBox>(R.id.cbNewsDeskValue1)
@@ -49,8 +51,10 @@ class MainActivity : AppCompatActivity() {
         if (cbNewsDeskVal3.isChecked)
             newsDeskValues.plus("Sports")
 
+        val array = resources.getStringArray(R.array.sort_order)
+
        // val selectedDate = SimpleDateFormat("yyyymmdd").format(etBeginDate.text)
-        parameters= APIParameters("20211010",spSortOrder.selectedItem.toString(),newsDeskValues)
+        parameters= APIParameters("20211010",array[spSortOrder.selectedItemPosition],newsDeskValues,etSearchText.text.toString())
     }
 
     fun setupSortOrder()

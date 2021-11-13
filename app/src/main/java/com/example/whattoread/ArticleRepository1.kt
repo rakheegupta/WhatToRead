@@ -14,15 +14,11 @@ class ArticleRepository1 {
         return mArticles
     }
 
-    fun fetchArticles(sortOrder:String,beginDate:String,funcQueryParams:String?)
+    fun fetchArticles(query:String?,sortOrder:String,beginDate:String,funcQueryParams:String?)
     {
         val apiService = ArticleService()
-        val call: Call<NYTApiResponse> = apiService.getArticlesFromNYT()
-        /*if (funcQueryParams == null)
-            apiService.getArticlesFromNYT(sortOrder, beginDate)
-        else
-            apiService.getArticlesFromNYT(sortOrder, beginDate, funcQueryParams)
-        */
+        val call: Call<NYTApiResponse> = apiService.getArticlesFromNYT(query,sortOrder, beginDate, funcQueryParams)
+
         call.enqueue(object : Callback<NYTApiResponse>
         {
             override fun onResponse(

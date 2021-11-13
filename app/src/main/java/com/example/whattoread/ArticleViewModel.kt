@@ -9,9 +9,9 @@ class ArticleViewModel :ViewModel() {
     fun getArticleRepository():ArticleRepository1{
         return mArticleRepository
     }
-    fun fetchArticles(sortOrder:String, beginDate: String, funcQueryParams:Array<String>)
+    fun fetchArticles(query:String?,sortOrder:String, beginDate: String, funcQueryParams:Array<String>)
     {
-        mArticleRepository.fetchArticles(sortOrder,beginDate,funcQueryParamsAsString(funcQueryParams))
+        mArticleRepository.fetchArticles(query,sortOrder,beginDate,funcQueryParamsAsString(funcQueryParams))
     }
 
     private fun funcQueryParamsAsString(funcQueryParams:Array<String>):String? {

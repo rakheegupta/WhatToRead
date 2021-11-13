@@ -22,4 +22,4 @@ class ArticleMultimedia(
 class HeadLine(val main:String):Parcelable
 
 @Parcelize
-class Author(val original:String):Parcelable
+class Author(val original:String?):Parcelable

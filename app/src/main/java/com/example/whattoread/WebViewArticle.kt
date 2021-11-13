@@ -23,5 +23,6 @@ class WebViewArticle : AppCompatActivity() {
             loadUrl(article!!.web_url)
         }
         actionBar?.title  = article?.headline!!.toString()
+
     }
 }

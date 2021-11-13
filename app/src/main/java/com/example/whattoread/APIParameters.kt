@@ -8,6 +8,7 @@ import java.util.*
 class APIParameters(
     val date:String,
     val sortOrder:String,
-    val newsDeskValues:Array<String>
+    val newsDeskValues:Array<String>,
+    val searchQuery:String?
 ):Parcelable
 
