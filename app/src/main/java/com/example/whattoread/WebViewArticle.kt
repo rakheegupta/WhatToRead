@@ -1,4 +1,4 @@
-package com.example.whattoread
+package com.example .whattoread
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,5 +22,6 @@ class WebViewArticle : AppCompatActivity() {
             webViewClient = WebViewClient()
             loadUrl(article!!.web_url)
         }
+        actionBar?.title  = article?.headline!!.toString()
     }
 }

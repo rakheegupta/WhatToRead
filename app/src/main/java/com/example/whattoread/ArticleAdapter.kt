@@ -1,11 +1,13 @@
 package com.example.whattoread
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -18,32 +20,9 @@ class ArticleAdapter(val mArticles:List<Article>?): RecyclerView.Adapter<Article
 
     lateinit var mContext:Context
 
-    class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView),View.OnClickListener {
+    class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
         val articleImageview = itemView.findViewById<ImageView>(R.id.ivArticleImage)
-
-        interface MyCustomObjectListener {
-            fun displayArticle(article: Article?)
-        }
-
-        var articleListener: MyCustomObjectListener? = null
-
         val articleHeadline = itemView.findViewById<TextView>(R.id.tvHeadLine)
-
-        init {
-            val customClickListener = View.OnClickListener {
-                fun onClick(p0: View?) {
-                }
-            }
-            itemView.setOnClickListener(customClickListener)
-        }
-
-        override fun onClick(p0: View?) {
-            TODO("Not yet implemented")
-        }
-
-        fun setCustomObjectListener(listener: MyCustomObjectListener){
-            articleListener = listener
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -80,6 +59,13 @@ class ArticleAdapter(val mArticles:List<Article>?): RecyclerView.Adapter<Article
         val tvHeadLineView = holder.articleHeadline
         tvHeadLineView.setText(article?.headline?.main)
 
+        holder.itemView.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v:View){
+                val intent = Intent(mContext, WebViewArticle::class.java)
+                intent.putExtra("article", article)
+                mContext.startActivity(intent)
+            }
+        })
     }
 
     override fun getItemCount(): Int {

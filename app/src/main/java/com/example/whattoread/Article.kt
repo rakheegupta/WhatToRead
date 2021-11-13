@@ -14,8 +14,8 @@ class Article (
 
 @Parcelize
 class ArticleMultimedia(
-    val caption:String,
-    val url:String
+    val caption:String?,
+    val url:String?
 ):Parcelable
 
 @Parcelize
