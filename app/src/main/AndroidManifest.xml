@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatToRead">
         <activity
-            android:name=".WebViewArticle"
+            android:name=".activities.WebViewArticle"
             android:exported="false" />
         <activity
-            android:name=".ArticleActivity"
+            android:name=".activities.ArticleActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

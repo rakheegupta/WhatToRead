@@ -1,10 +1,11 @@
-package com.example.whattoread
+package com.example.whattoread.activities
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.whattoread.R
 import com.squareup.timessquare.CalendarPickerView
 import java.util.*
 
@@ -38,7 +39,7 @@ class DatePicker : Fragment() {
         var nextYear:Calendar = Calendar.getInstance()
         nextYear.add(Calendar.YEAR,1)
 
-        val datePicker : CalendarPickerView = findViewById(R.id.datePickerView)
+        //val datePicker : CalendarPickerView = findViewById(R.id.datePickerView)
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_date_picker, container, false)

@@ -1,4 +1,4 @@
-package com.example.whattoread
+package com.example.whattoread.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

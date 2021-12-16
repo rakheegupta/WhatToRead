@@ -1,12 +1,11 @@
-package com.example.whattoread
-import androidx.lifecycle.LiveData
+package com.example.whattoread.viewmodel
 import androidx.lifecycle.ViewModel
 
 class ArticleViewModel :ViewModel() {
 
-    private var mArticleRepository: ArticleRepository1 =ArticleRepository1()
+    private var mArticleRepository: ArticleRepository1 = ArticleRepository1()
 
-    fun getArticleRepository():ArticleRepository1{
+    fun getArticleRepository(): ArticleRepository1 {
         return mArticleRepository
     }
     fun fetchArticles(query:String?,sortOrder:String, beginDate: String, funcQueryParams:Array<String>)

@@ -1,14 +1,15 @@
-package com.example.whattoread
+package com.example.whattoread.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.whattoread.ItemClickSupport
+import com.example.whattoread.*
+import com.example.whattoread.adapter.ArticleAdapter
+import com.example.whattoread.api.APIParameters
+import com.example.whattoread.model.Article
+import com.example.whattoread.viewmodel.ArticleViewModel
 
 class ArticleActivity : AppCompatActivity() {
     private var articleList = mutableListOf<Article>()
@@ -34,7 +35,7 @@ class ArticleActivity : AppCompatActivity() {
         }
         ItemClickSupport.addTo(rvArticle).setOnItemClickListener(itemClickListenerOnClick)
 */
-            val params:APIParameters? = intent.getParcelableExtra("settings")
+            val params: APIParameters? = intent.getParcelableExtra("settings")
             val queryString:String? = intent.getStringExtra("query")
 
             val articleViewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)

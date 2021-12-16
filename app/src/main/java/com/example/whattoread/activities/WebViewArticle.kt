@@ -1,10 +1,12 @@
-package com.example .whattoread
+package com.example.whattoread.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.example.whattoread.R
+import com.example.whattoread.model.Article
 
 class WebViewArticle : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

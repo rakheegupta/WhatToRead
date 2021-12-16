@@ -1,8 +1,7 @@
-package com.example.whattoread
+package com.example.whattoread.api
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.util.*
 
 @Parcelize
 class APIParameters(

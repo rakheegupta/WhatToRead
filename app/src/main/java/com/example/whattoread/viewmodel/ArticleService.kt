@@ -1,5 +1,6 @@
-package com.example.whattoread
+package com.example.whattoread.viewmodel
 
+import com.example.whattoread.api.NYTApiResponse
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

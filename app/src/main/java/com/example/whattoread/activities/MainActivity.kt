@@ -1,15 +1,15 @@
-package com.example.whattoread
+package com.example.whattoread.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.whattoread.api.APIParameters
+import com.example.whattoread.R
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var parameters:APIParameters
+    private lateinit var parameters: APIParameters
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun displayResultsFromApi(){
-        val intent= Intent(this,ArticleActivity::class.java)
+        val intent= Intent(this, ArticleActivity::class.java)
         intent.putExtra("settings",parameters)
         intent.putExtra("query",parameters.searchQuery)
         startActivity(intent)

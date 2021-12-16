@@ -1,8 +1,10 @@
-package com.example.whattoread
+package com.example.whattoread.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.whattoread.api.NYTApiResponse
+import com.example.whattoread.model.Article
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

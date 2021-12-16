@@ -1,4 +1,4 @@
-package com.example.whattoread
+package com.example.whattoread.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -10,8 +10,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-
-
+import com.example.whattoread.R
+import com.example.whattoread.activities.WebViewArticle
+import com.example.whattoread.model.Article
 
 
 // Create the basic adapter extending from RecyclerView.Adapter
@@ -29,7 +30,7 @@ class ArticleAdapter(val mArticles:List<Article>?): RecyclerView.Adapter<Article
         mContext = parent.context
 
         var itemView = LayoutInflater.from(mContext).inflate(
-                R.layout.article,
+            R.layout.article,
                 parent,
                 false,
             )
